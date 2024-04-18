@@ -19,7 +19,11 @@ async function consumeGetContract  (req, res)  {
    
   
    
-   console.log('consumeGetContract');
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeGetContract guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' kenteken: ' + kenteken );
+ 
+  
   
   
                       
@@ -44,8 +48,12 @@ async function consumeGetTires  (req, res)  {
   let selectie   = req.query.selectie;
    
   
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeGetTires guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' kenteken: ' + kenteken  + ' selectie: ' +selectie );
+ 
    
-   console.log('consumeGetTires');
+    
    
   
                       
@@ -68,8 +76,11 @@ async function consumeCreateServiceRequest  (req, res)  {
   let applicatie = req.query.applicatie;
   let werkorder  = req.query.werkorder;
   
-  console.log('consumeCreateServiceRequest');
-  
+   
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeCreateServiceRequest guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' werkorder: ' + werkorder );
+ 
    
   
   
@@ -96,8 +107,11 @@ async function consumeCreateReliefVehicleRequest  (req, res)  {
    
   
    
-   console.log('consumeCreateReliefVehicleRequest');
     
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeCreateReliefVehicleRequest  guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' verhuurorder: ' + verhuurorder );
+  
   
   var resolve =  await handleCreateReliefVehicleRequest(guidmsg, lib, filiaal, applicatie, verhuurorder);
  
@@ -116,12 +130,11 @@ async function consumeCancelServiceRequestLine  (req, res)  {
   let guidline   = req.query.guidline;
    
    
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeCancelServiceRequestLine  guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' guidorder: ' + guidorder + ' guidline: ' +guidline );
   
-  
-  
-                      
-  
-   
+ 
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var resolve =  await handleCancelServiceRequestLine(guidmsg, lib, filiaal, applicatie, guidorder, guidline);
   //res.send('handleO365  is uitgevoerd ; mailnr: ' +mailnr );
@@ -140,9 +153,11 @@ async function consumeGetComponents  (req, res)  {
    
   
    
-   console.log('consumeGetComponents');
     
-   
+ var d = new Date();
+ var datetime = d.toLocaleString(); 	
+ console.log(datetime + ' consumeGetComponents  guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie );
+  
   
   
                       
@@ -169,8 +184,12 @@ async function consumeStatusServiceRequest  (req, res)  {
    
   
    
-   console.log('consumeStatusServiceRequest');
     
+   var d = new Date();
+   var datetime = d.toLocaleString(); 	
+   console.log(datetime + ' consumeStatusServiceRequest  guidmsg: ' +guidmsg + ' lib: ' + lib + ' filiaal: ' + filiaal + ' applicatie: ' + applicatie + ' guid: ' +guid );
+    
+      
  
  // res.send('Mollie wordt uitgevoerd ; setletter: ' +setletter + ' filiaal: '+ filiaal+ ' ordernr: '+ ordernr);
   var resolve =  await handleStatusServiceRequest(guidmsg, lib, filiaal, applicatie, guid);
